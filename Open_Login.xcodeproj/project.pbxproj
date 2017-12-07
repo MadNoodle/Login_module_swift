@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B92233B41FD73E4F003E04E0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92233B21FD73E4F003E04E0 /* LoginController.swift */; };
+		B92233B51FD73E4F003E04E0 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92233B31FD73E4F003E04E0 /* LoginController.xib */; };
 		B961185D1FD5FF7500DE3504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961185C1FD5FF7500DE3504 /* AppDelegate.swift */; };
-		B961185F1FD5FF7500DE3504 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961185E1FD5FF7500DE3504 /* LoginController.swift */; };
-		B96118621FD5FF7500DE3504 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96118601FD5FF7500DE3504 /* Main.storyboard */; };
 		B96118641FD5FF7500DE3504 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96118631FD5FF7500DE3504 /* Assets.xcassets */; };
 		B96118671FD5FF7500DE3504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96118651FD5FF7500DE3504 /* LaunchScreen.storyboard */; };
-		B96118701FD600D800DE3504 /* SignInControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961186E1FD600D800DE3504 /* SignInControllerViewController.swift */; };
+		B96118701FD600D800DE3504 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961186E1FD600D800DE3504 /* SignInController.swift */; };
 		B96118711FD600D800DE3504 /* SignInControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B961186F1FD600D800DE3504 /* SignInControllerViewController.xib */; };
-		B96118781FD6091400DE3504 /* Skyscanner:SkyFloatingLabelTextField in Resources */ = {isa = PBXBuildFile; fileRef = B96118771FD6091400DE3504 /* Skyscanner:SkyFloatingLabelTextField */; };
 		B961187A1FD6094500DE3504 /* LoginDispatcherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96118791FD6094500DE3504 /* LoginDispatcherConfig.swift */; };
+		B99A61441FD6F6C100E34572 /* Skyscanner:SkyFloatingLabelTextField in Resources */ = {isa = PBXBuildFile; fileRef = B99A61431FD6F6C100E34572 /* Skyscanner:SkyFloatingLabelTextField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B92233B21FD73E4F003E04E0 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		B92233B31FD73E4F003E04E0 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		B96118591FD5FF7500DE3504 /* Open_Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Open_Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B961185C1FD5FF7500DE3504 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B961185E1FD5FF7500DE3504 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		B96118611FD5FF7500DE3504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B96118631FD5FF7500DE3504 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96118661FD5FF7500DE3504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B96118681FD5FF7500DE3504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B961186E1FD600D800DE3504 /* SignInControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInControllerViewController.swift; sourceTree = "<group>"; };
+		B961186E1FD600D800DE3504 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		B961186F1FD600D800DE3504 /* SignInControllerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInControllerViewController.xib; sourceTree = "<group>"; };
-		B96118771FD6091400DE3504 /* Skyscanner:SkyFloatingLabelTextField */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Skyscanner:SkyFloatingLabelTextField"; sourceTree = "<group>"; };
 		B96118791FD6094500DE3504 /* LoginDispatcherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDispatcherConfig.swift; sourceTree = "<group>"; };
+		B99A61431FD6F6C100E34572 /* Skyscanner:SkyFloatingLabelTextField */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Skyscanner:SkyFloatingLabelTextField"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 		B961185B1FD5FF7500DE3504 /* Open_Login */ = {
 			isa = PBXGroup;
 			children = (
-				B96118771FD6091400DE3504 /* Skyscanner:SkyFloatingLabelTextField */,
+				B99A61431FD6F6C100E34572 /* Skyscanner:SkyFloatingLabelTextField */,
 				B96118791FD6094500DE3504 /* LoginDispatcherConfig.swift */,
 				B96118741FD6012300DE3504 /* Controllers */,
 				B96118731FD6010C00DE3504 /* Supporting_files */,
@@ -75,7 +75,7 @@
 		B96118721FD600FE00DE3504 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B96118601FD5FF7500DE3504 /* Main.storyboard */,
+				B92233B31FD73E4F003E04E0 /* LoginController.xib */,
 				B961186F1FD600D800DE3504 /* SignInControllerViewController.xib */,
 			);
 			path = Views;
@@ -94,8 +94,8 @@
 		B96118741FD6012300DE3504 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B961185E1FD5FF7500DE3504 /* LoginController.swift */,
-				B961186E1FD600D800DE3504 /* SignInControllerViewController.swift */,
+				B961186E1FD600D800DE3504 /* SignInController.swift */,
+				B92233B21FD73E4F003E04E0 /* LoginController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,11 +159,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96118781FD6091400DE3504 /* Skyscanner:SkyFloatingLabelTextField in Resources */,
 				B96118671FD5FF7500DE3504 /* LaunchScreen.storyboard in Resources */,
 				B96118641FD5FF7500DE3504 /* Assets.xcassets in Resources */,
 				B96118711FD600D800DE3504 /* SignInControllerViewController.xib in Resources */,
-				B96118621FD5FF7500DE3504 /* Main.storyboard in Resources */,
+				B92233B51FD73E4F003E04E0 /* LoginController.xib in Resources */,
+				B99A61441FD6F6C100E34572 /* Skyscanner:SkyFloatingLabelTextField in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,23 +175,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B961187A1FD6094500DE3504 /* LoginDispatcherConfig.swift in Sources */,
-				B961185F1FD5FF7500DE3504 /* LoginController.swift in Sources */,
+				B92233B41FD73E4F003E04E0 /* LoginController.swift in Sources */,
 				B961185D1FD5FF7500DE3504 /* AppDelegate.swift in Sources */,
-				B96118701FD600D800DE3504 /* SignInControllerViewController.swift in Sources */,
+				B96118701FD600D800DE3504 /* SignInController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B96118601FD5FF7500DE3504 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B96118611FD5FF7500DE3504 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B96118651FD5FF7500DE3504 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

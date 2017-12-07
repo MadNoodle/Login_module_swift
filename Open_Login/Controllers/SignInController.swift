@@ -9,11 +9,20 @@
 import UIKit
 
 protocol SignInDelegate{
-  
+  func didEnterLogin()
+  func didEnterPassword()
+  func didSelectForgot()
+  func didSelectSignIn()
   
 }
-class SignInControllerViewController: UIViewController {
-
+class SignInController: UIViewController {
+  
+  
+  @IBOutlet weak var enterPassword: UITextField!
+  @IBOutlet var enterLogin: UITextField!
+  @IBOutlet weak var forgotPassword: UIButton!
+  @IBOutlet weak var signIn: UIButton!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
