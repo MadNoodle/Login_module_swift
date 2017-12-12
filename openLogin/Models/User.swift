@@ -35,8 +35,6 @@ class User {
     self.password = password
     self.profilePicture = profilePicture
     
-//    self.imageName = imageName
-//    self.data = data
   }
   
 }

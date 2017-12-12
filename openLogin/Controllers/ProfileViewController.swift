@@ -19,7 +19,8 @@ class ProfileViewController: UIViewController {
   @IBOutlet weak var last: UILabel!
   @IBOutlet weak var first: UILabel!
   @IBOutlet weak var email: UILabel!
-  @IBOutlet weak var profilePicture: UIImageView!
+  @IBOutlet weak var picture: UIImageView!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,8 +41,17 @@ class ProfileViewController: UIViewController {
         self.last.text = user.lastName
         self.first.text = user.firstName
         self.email.text = user.email
-        let data = user.profilePicture.data(using: .utf8)
-        self.profilePicture.image = UIImage(data: data!)
+        DispatchQueue.global(qos: .userInteractive).async{
+        let profilePictureUrl = URL(string: user.profilePicture)
+          let data = try? Data(contentsOf: profilePictureUrl!)
+        
+        if let imageData = data {
+          DispatchQueue.main.async {
+            self.picture.image = UIImage(data: imageData)
+          }
+          
+        }
+        }
       }
     }
   }

@@ -16,7 +16,7 @@
                 <outlet property="email" destination="dLl-Z0-bdJ" id="6YK-rY-DlW"/>
                 <outlet property="first" destination="7BC-Qv-jdv" id="ZZd-Y7-haG"/>
                 <outlet property="last" destination="sgx-IT-8SB" id="IhB-Xz-1Mo"/>
-                <outlet property="profilePicture" destination="kSD-Vh-w1K" id="oVE-r4-qcG"/>
+                <outlet property="picture" destination="kSD-Vh-w1K" id="cP7-cg-jPN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

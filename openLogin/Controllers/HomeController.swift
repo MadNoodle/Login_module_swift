@@ -100,15 +100,10 @@ class HomeController: UIViewController {
           if let picture = responseDictionary["picture"] as? [String:Any]{
             let data = picture["data"]as? [String:Any]
             let url = data!["url"] as? String
+            
             let imageData = try? Data(contentsOf: URL(string: url!)!)
 //            let userToLog = User(lastName: lastName, firstName: firstName, email: email!, password: "", imageName: "", data: imageData! as NSData)
             
-            // Checking Values
-//            
-//              print(userToLog.lastName!)
-//              print(userToLog.firstName!)
-//              print(userToLog.email!)
-//              print(userToLog.data!)
           }
           
         }
