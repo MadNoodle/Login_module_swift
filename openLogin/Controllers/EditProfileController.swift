@@ -11,7 +11,7 @@ import Firebase
 import FirebaseStorage
 
 class EditProfileController: UIViewController {
-
+  
   // MARK: PROPERTIES
   var users = [User]()
   var stamp:String?
@@ -25,46 +25,12 @@ class EditProfileController: UIViewController {
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var confirmPassword: UITextField!
   
-  
+  // MARK: LIFECYCLE METHODS
   override func viewDidLoad() {
-        super.viewDidLoad()
-   fetchData()
-   
-   
-    }
-
-  func fetchData(){
-    DispatchQueue.global(qos: .userInteractive).async{
-      DatabaseService.shared.ref.observe(DataEventType.value, with:{(snapshot) in
-        print(snapshot)
-        guard let snap = UserSnapshot(with: snapshot) else {return }
-        DispatchQueue.main.async {
-          self.users = snap.users
-          self.displayUser(from: self.users)}
-      })}
+    super.viewDidLoad()
   }
   
-  
-  func displayUser(from  db: [User]){
-    for user in db{
-      if user.stamp == stamp {
-        
-        let profilePictureUrl = URL(string: user.profilePicture)
-        let data = try? Data(contentsOf: profilePictureUrl!)
-        
-        if let imageData = data {
-          
-          self.profilePicture.image = UIImage(data: imageData)
-        }
-        self.lastName.text = user.lastName
-        self.firstName.text = user.firstName
-        self.email.text = user.email
-        self.password.text = user.password
-        self.confirmPassword.text = "confirm Password"
-      }
-      
-    }
-  }
+  // MARK: ACTIONS
   @IBAction func updateProfile(_ sender: Any) {
     if lastName.text != nil && firstName.text != nil && email.text != nil && password.text != nil && confirmPassword.text != nil {
       let uuid = UUID().uuidString
@@ -74,38 +40,36 @@ class EditProfileController: UIViewController {
       
     }
   }
+  
+  /**
+   Update existing profile by sending changed infos
+ */
+  func uploadUpdates(_ resizedProfilePicture: UIImage, _ uuid: String) {
+    let data = UIImagePNGRepresentation(resizedProfilePicture) as Data?
+    // Create a storage reference from our storage service
+    let storageRef = storage.reference()
+    let imageRef = storageRef.child("\(uuid).jpg")
     
-    // A commenter
-    func uploadUpdates(_ resizedProfilePicture: UIImage, _ uuid: String) {
-      let data = UIImagePNGRepresentation(resizedProfilePicture) as Data?
-      // Create a storage reference from our storage service
-      let storageRef = storage.reference()
-      let imageRef = storageRef.child("\(uuid).jpg")
-      
-      DispatchQueue.global(qos: .userInteractive).async{
-        // Upload the file to the path "images/rivers.jpg"
-        _ = imageRef.putData(data!, metadata: nil) { (metadata, error) in
-          guard let metadata = metadata else {
-            print("error while uploading data")
-            return
-          }
-          
-          //let downloadURL = metadata.downloadURL
-          
-          if let profileImageUrl =  metadata.downloadURL()?.absoluteString{
-            self.updateUser(self.stamp!, with: profileImageUrl)
-          }
+    DispatchQueue.global(qos: .userInteractive).async{
+      // Upload the file to the path "images/rivers.jpg"
+      _ = imageRef.putData(data!, metadata: nil) { (metadata, error) in
+        guard let metadata = metadata else {
+          print("error while uploading data")
+          return
+        }
+        if let profileImageUrl =  metadata.downloadURL()?.absoluteString{
+          self.updateUser(self.stamp!, with: profileImageUrl)
         }
       }
     }
+  }
   
+  /**
+   Upload the new values on firebase database
+ */
   func updateUser(_ stamp:String, with image:String){
-      let newValues = ["lastName" : lastName.text!,"firstName" : firstName.text!,"email" : email.text!,"password" : password.text!,"stamp": stamp,"profilePicture":image ]
+    let newValues = ["lastName" : lastName.text!,"firstName" : firstName.text!,"email" : email.text!,"password" : password.text!,"stamp": stamp,"profilePicture":image ]
     DatabaseService.shared.ref.child(stamp).setValue(newValues)
-    
-   
-    
-    }
-  
+  }
 }
 

@@ -8,9 +8,18 @@
 
 import Foundation
 import UIKit
-
+/**
+ UIImage extension needed in ProfilViewController
+ */
 extension UIImage {
   
+  /**
+   Function that resize profile picture in a certain Size
+   - parameters:
+      - targetSize: CGSize final size of the image
+   
+   - returns: UIImage
+ */
   func ResizeImage( targetSize: CGSize) -> UIImage {
     let size = self.size
     

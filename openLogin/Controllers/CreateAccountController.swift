@@ -16,6 +16,7 @@ class CreateAccountController: UIViewController, UINavigationControllerDelegate,
   let profileVc = ProfileViewController(nibName: nil, bundle: nil)
   //Initialize the Picker
   let image = UIImagePickerController()
+  // Get a reference to the database service using the default Firebase App
   var ref: DatabaseReference!
   // Get a reference to the storage service using the default Firebase App
   let storage = Storage.storage()
@@ -37,7 +38,6 @@ class CreateAccountController: UIViewController, UINavigationControllerDelegate,
     image.delegate = self
     image.allowsEditing = false
     ref = Database.database().reference()
-    
   }
   
   // MARK: ACTIONS
@@ -46,18 +46,28 @@ class CreateAccountController: UIViewController, UINavigationControllerDelegate,
     ImportImageFromAlbum(image)
   }
   
-
+  
   @IBAction func CreateAccount(_ sender: Any) {
     if lastName.text != nil && firstName.text != nil && email.text != nil && password.text != nil && confirmPassword.text != nil {
+      // give a unique id
       let uuid = UUID().uuidString
+      // Size you wish to compress profile picture
       let compressedSize = CGSize(width: 500.0, height: 500.0)
+      // actual resizing
       let resizedProfilePicture = profilePicture.image!.ResizeImage( targetSize: compressedSize)
+      //upload image
       uploadImageToFirebase(resizedProfilePicture, uuid)
+      // push profilVc
       navigationController?.pushViewController(profileVc, animated: true)
     }
   }
   
-  
+  /**
+   Create user and send it to Firebase
+   grab the url from Firebase Storage to String and inject it in the database
+   - parameters:
+   - url: String Storage url for uploaded profile Image
+   */
   private func registerUserIntoDatabse(with url:String){
     let stamp = String(Int(Date.timeIntervalSinceReferenceDate * 1000))
     // Conform data in a model instance
@@ -89,8 +99,13 @@ class CreateAccountController: UIViewController, UINavigationControllerDelegate,
     }
   }
   
-  // A commenter
-   func uploadImageToFirebase(_ resizedProfilePicture: UIImage, _ uuid: String) {
+  /**
+   Upload the image to Firebase Storage
+   - parameters:
+   - resizedPRofilePicture: UIImage compressed image to upload
+   - uuid: unique id
+   */
+  func uploadImageToFirebase(_ resizedProfilePicture: UIImage, _ uuid: String) {
     let data = UIImagePNGRepresentation(resizedProfilePicture) as Data?
     // Create a storage reference from our storage service
     let storageRef = storage.reference()
@@ -103,9 +118,6 @@ class CreateAccountController: UIViewController, UINavigationControllerDelegate,
           print("error while uploading data")
           return
         }
-        
-        //let downloadURL = metadata.downloadURL
-        
         if let profileImageUrl =  metadata.downloadURL()?.absoluteString{
           self.registerUserIntoDatabse(with: profileImageUrl)
         }

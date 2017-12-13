@@ -14,15 +14,13 @@ class ForgotPassword: UIViewController {
   @IBOutlet weak var enterEmail: UITextField!
   @IBOutlet weak var askForPassword: UIButton!
   
-  
   override func viewDidLoad() {
         super.viewDidLoad()
-
-  
     }
   
   // MARK: ACTTIONS
   @IBAction func resetPassword(_ sender: Any) {
+    print(enterEmail.text!)
   }
   
 }
