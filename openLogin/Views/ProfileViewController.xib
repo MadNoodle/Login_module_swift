@@ -34,7 +34,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dl-s9-0ZE">
                                     <rect key="frame" x="24" y="0.0" width="247" height="247"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="kSD-Vh-w1K">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="kSD-Vh-w1K">
                                             <rect key="frame" x="0.0" y="0.0" width="247" height="247"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="kSD-Vh-w1K" secondAttribute="height" multiplier="1:1" id="USi-Rc-eCN"/>
@@ -112,6 +112,9 @@
                                             <state key="normal" title="Modifier Profile">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="editProfile:" destination="-1" eventType="touchUpInside" id="wPs-gm-Df3"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

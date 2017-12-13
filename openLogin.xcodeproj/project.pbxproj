@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91103781FE1366C00B8FE75 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91103761FE1366C00B8FE75 /* EditProfileController.swift */; };
+		B91103791FE1366C00B8FE75 /* EditProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B91103771FE1366C00B8FE75 /* EditProfileController.xib */; };
+		B911037B1FE1478D00B8FE75 /* CreateAccountController+resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911037A1FE1478D00B8FE75 /* CreateAccountController+resizing.swift */; };
 		B92233C31FD73F1F003E04E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92233C21FD73F1F003E04E0 /* AppDelegate.swift */; };
 		B92233CA1FD73F1F003E04E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92233C91FD73F1F003E04E0 /* Assets.xcassets */; };
 		B92233CD1FD73F1F003E04E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92233CB1FD73F1F003E04E0 /* LaunchScreen.storyboard */; };
@@ -32,6 +35,9 @@
 		8DD268C4C466FEBD7738598D /* Pods_openLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57C912B3997A8D9ABA2544E /* Pods-openLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-openLogin/Pods-openLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		B627511E50B36D06D175B2C7 /* Pods-openLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-openLogin/Pods-openLogin.release.xcconfig"; sourceTree = "<group>"; };
+		B91103761FE1366C00B8FE75 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		B91103771FE1366C00B8FE75 /* EditProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileController.xib; sourceTree = "<group>"; };
+		B911037A1FE1478D00B8FE75 /* CreateAccountController+resizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateAccountController+resizing.swift"; sourceTree = "<group>"; };
 		B92233BF1FD73F1F003E04E0 /* openLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92233C21FD73F1F003E04E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B92233C91FD73F1F003E04E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,8 +118,10 @@
 		B92233D91FD74056003E04E0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B91103761FE1366C00B8FE75 /* EditProfileController.swift */,
 				B96C4EAB1FD9308700649404 /* ProfileViewController.swift */,
 				B96C4EA51FD811CE00649404 /* CreateAccountController.swift */,
+				B911037A1FE1478D00B8FE75 /* CreateAccountController+resizing.swift */,
 				B92233E01FD743D4003E04E0 /* ForgotPassword.swift */,
 				B92233D41FD73F53003E04E0 /* HomeController.swift */,
 				B92233DC1FD74128003E04E0 /* SignUpController.swift */,
@@ -129,6 +137,7 @@
 				B92233DD1FD74128003E04E0 /* SignUpController.xib */,
 				B96C4EA61FD811CE00649404 /* CreateAccountController.xib */,
 				B96C4EAC1FD9308700649404 /* ProfileViewController.xib */,
+				B91103771FE1366C00B8FE75 /* EditProfileController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 				B92233D71FD73F53003E04E0 /* HomeController.xib in Resources */,
 				B92233E31FD743D4003E04E0 /* ForgotPassword.xib in Resources */,
 				B92233CA1FD73F1F003E04E0 /* Assets.xcassets in Resources */,
+				B91103791FE1366C00B8FE75 /* EditProfileController.xib in Resources */,
 				B92233DF1FD74128003E04E0 /* SignUpController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +304,8 @@
 				B9B791D51FD959B10045A19F /* FacebookRequest.swift in Sources */,
 				B92233D61FD73F53003E04E0 /* HomeController.swift in Sources */,
 				B92233EA1FD74B57003E04E0 /* DatabaseService.swift in Sources */,
+				B911037B1FE1478D00B8FE75 /* CreateAccountController+resizing.swift in Sources */,
+				B91103781FE1366C00B8FE75 /* EditProfileController.swift in Sources */,
 				B9B59B4B1FD9DC6C00904540 /* UserSnapshot.swift in Sources */,
 				B96C4EA71FD811CE00649404 /* CreateAccountController.swift in Sources */,
 				B92233DE1FD74128003E04E0 /* SignUpController.swift in Sources */,
