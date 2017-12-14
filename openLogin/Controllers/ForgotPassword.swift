@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Validator
 class ForgotPassword: UIViewController {
   
   // MARK: OUTLETS
@@ -20,7 +20,20 @@ class ForgotPassword: UIViewController {
   
   // MARK: ACTTIONS
   @IBAction func resetPassword(_ sender: Any) {
-    print(enterEmail.text!)
+    let result = setupValidation()
+    switch result {
+    case .valid:
+      print(enterEmail.text!)
+    case .invalid:
+      print("please enter a valid email address")
+    }
+    
   }
   
+  func setupValidation() -> ValidationResult{
+    
+    let emailRule = ValidationRulePattern(pattern: EmailValidationPattern.standard, error: ValidationError(message: "please enter a valid email address"))
+    let result = enterEmail.validate(rule:emailRule)
+    return result
+  }
 }

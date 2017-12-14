@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpController" customModule="openLogin" customModuleProvider="target">
             <connections>
-                <outlet property="enterLogin" destination="F94-DC-9Fd" id="V1l-Q4-ZOv"/>
+                <outlet property="enterLogin" destination="F94-DC-9Fd" id="aHS-70-VDA"/>
                 <outlet property="enterPassword" destination="5lT-4U-6xF" id="4pp-OR-cvP"/>
                 <outlet property="forgotPassword" destination="Tu2-DV-IoG" id="Olb-uc-9aU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

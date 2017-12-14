@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import Validator
 
 class CreateAccountController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
   
@@ -48,18 +49,47 @@ class CreateAccountController: UIViewController, UINavigationControllerDelegate,
   
   
   @IBAction func CreateAccount(_ sender: Any) {
-    if lastName.text != nil && firstName.text != nil && email.text != nil && password.text != nil && confirmPassword.text != nil {
-      // give a unique id
-      let uuid = UUID().uuidString
-      // Size you wish to compress profile picture
-      let compressedSize = CGSize(width: 500.0, height: 500.0)
-      // actual resizing
-      let resizedProfilePicture = profilePicture.image!.ResizeImage( targetSize: compressedSize)
-      //upload image
-      uploadImageToFirebase(resizedProfilePicture, uuid)
-      // push profilVc
-      navigationController?.pushViewController(profileVc, animated: true)
-    }
+     if lastName.text != nil && firstName.text != nil && email.text != nil && password.text != nil && confirmPassword.text != nil {
+      let validation:ValidationResult? = setupValidation()
+    switch validation {
+    case .valid?:
+     
+        // give a unique id
+        let uuid = UUID().uuidString
+        // Size you wish to compress profile picture
+        let compressedSize = CGSize(width: 500.0, height: 500.0)
+        // actual resizing
+        let resizedProfilePicture = profilePicture.image!.ResizeImage( targetSize: compressedSize)
+        //upload image
+        uploadImageToFirebase(resizedProfilePicture, uuid)
+        // push profilVc
+        navigationController?.pushViewController(profileVc, animated: true)
+     
+    case .invalid?:
+      print("Veuillez renseigner tous les champs")
+   
+    case .none:
+      break
+      }
+     }
+  }
+  
+  /**
+   Setsup Validation Rules for registering an account.
+   Based on Validator Framework https://github.com/adamwaite/Validator
+   */
+  func setupValidation()-> ValidationResult{
+    var result: ValidationResult?
+    // password and confirm password equality
+    let staticEqualityRule = ValidationRuleEquality<String>(target: password.text!, error: ValidationError(message: "les mots de passe ne correspondent pas"))
+    let passwordValidation = confirmPassword.validate(rule: staticEqualityRule)
+    // email format check
+    let emailRule = ValidationRulePattern(pattern: EmailValidationPattern.standard, error: ValidationError(message: "please enter a valid email address"))
+    let emailResult = email.validate(rule:emailRule)
+    if emailResult == .valid && passwordValidation == .valid{
+      result = .valid
+    } else {result = .invalid([ValidationError(message: "Non")])}
+    return result!
   }
   
   /**

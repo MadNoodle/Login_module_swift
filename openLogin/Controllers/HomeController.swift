@@ -99,8 +99,12 @@ class HomeController: UIViewController {
           if let picture = responseDictionary["picture"] as? [String:Any]{
             let data = picture["data"]as? [String:Any]
             let url = data!["url"] as? String
+            
+            let userToCreate = ["lastName" : lastName,"firstName" : firstName,"email" : email,"password" : "","stamp": stamp,"profilePicture":url ]
+            
+            //Send user to Firebase
+            DatabaseService.shared.ref.child(stamp).setValue(userToCreate)
             self.profilVc.stamp = stamp
-            self.registerIfNoUser(lastName:lastName, firstName: firstName, email:email!, stamp:stamp, url:url!)
           }
           
         }
@@ -113,27 +117,19 @@ class HomeController: UIViewController {
   }
   
   
-  
-  func registerIfNoUser( lastName:String, firstName: String, email:String, stamp:String, url:String){
-    DispatchQueue.global(qos: .userInteractive).async{
-      DatabaseService.shared.ref.observe(DataEventType.value, with:{(snapshot) in
-        guard let snap = UserSnapshot(with: snapshot) else {return }
-        DispatchQueue.main.async {
-          //display on main thread
-          self.users = snap.users
-          for user in self.users {
-            if email != user.email {
-              let userToCreate = ["lastName" : lastName,"firstName" : firstName,"email" : email,"password" : "","stamp": stamp,"profilePicture":url ]
-              print (userToCreate["lastName"])
-              //Send user to Firebase
-              DatabaseService.shared.ref.child(stamp).setValue(userToCreate)
-            }
-            else {
-//              self.navigationController?.pushViewController(self.profilVc, animated: true)
-            }
-          }}
-      })}
-  }
+//  /**
+//   Create user and send it to Firebase
+//   grab the url from Firebase Storage to String and inject it in the database
+//   - parameters:
+//   - url: String Storage url for uploaded profile Image
+//   */
+//  private func registerUserIntoDatabse(with url:String){
+//    let stamp = String(Int(Date.timeIntervalSinceReferenceDate * 1000))
+//    // Conform data in a model instance
+//
+//    // send user's stamp to profileVc to retrieve the user
+//    profileVc.stamp = userToCreate["stamp"]!
+//  }
   
   
   

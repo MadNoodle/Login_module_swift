@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import Validator
 
 class SignUpController: UIViewController {
   
@@ -19,6 +20,7 @@ class SignUpController: UIViewController {
   var users = [User]()
   
   // MARK: OUTLETS
+  
   @IBOutlet weak var enterLogin: UITextField!
   @IBOutlet weak var enterPassword: UITextField!
   @IBOutlet weak var forgotPassword: UIButton!
@@ -27,15 +29,35 @@ class SignUpController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
+
   
   // MARK: ACTIONS
   
   @IBAction func signUp(_ sender: Any) {
-    verifyUser()
+    let result = setupValidation()
+    switch result {
+    case .valid:
+      verifyUser()
+    case .invalid:
+      print("please enter a valid email address")
+    }
+    
   }
   
   @IBAction func forgotPassword(_ sender: Any) {
     navigationController?.pushViewController(forgotVc, animated: true)
+  }
+  
+  
+  /**
+   Setsup Validation Rules for registering an account.
+   Based on Validator Framework https://github.com/adamwaite/Validator
+   */
+  func setupValidation() -> ValidationResult{
+    
+    let emailRule = ValidationRulePattern(pattern: EmailValidationPattern.standard, error: ValidationError(message: "please enter a valid email address"))
+    let result = enterLogin.validate(rule:emailRule)
+    return result
   }
   
   /**
@@ -61,7 +83,7 @@ class SignUpController: UIViewController {
   func checkCredential(for users : [User]){
     for user in users {
       if self.enterLogin.text != user.email {
- self.navigationController?.pushViewController(self.createVc, animated: true)
+        self.navigationController?.pushViewController(self.createVc, animated: true)
       } else{
         if self.enterPassword.text == user.password {
           self.profilVc.stamp = user.stamp
@@ -74,12 +96,12 @@ class SignUpController: UIViewController {
     }
   }
   
-/**
+  /**
    Function that pops an Alert and dismiss the alert Controller
    - parameters:
-       - message: String header message
-       - callToAction: String button message
- */
+   - message: String header message
+   - callToAction: String button message
+   */
   func popAlert(message: String, callToAction: String){
     let cancelAction = UIAlertAction(title: callToAction,style: .cancel)
     let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)

@@ -20,6 +20,7 @@
 		B92233E21FD743D4003E04E0 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92233E01FD743D4003E04E0 /* ForgotPassword.swift */; };
 		B92233E31FD743D4003E04E0 /* ForgotPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92233E11FD743D4003E04E0 /* ForgotPassword.xib */; };
 		B92233EA1FD74B57003E04E0 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92233E91FD74B57003E04E0 /* DatabaseService.swift */; };
+		B941AEA01FE28C4600A0B7D5 /* ValidationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B941AE9F1FE28C4600A0B7D5 /* ValidationErrorType.swift */; };
 		B96C4EA71FD811CE00649404 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C4EA51FD811CE00649404 /* CreateAccountController.swift */; };
 		B96C4EA81FD811CE00649404 /* CreateAccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96C4EA61FD811CE00649404 /* CreateAccountController.xib */; };
 		B96C4EAA1FD817A400649404 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C4EA91FD817A400649404 /* User.swift */; };
@@ -50,6 +51,7 @@
 		B92233E01FD743D4003E04E0 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		B92233E11FD743D4003E04E0 /* ForgotPassword.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPassword.xib; sourceTree = "<group>"; };
 		B92233E91FD74B57003E04E0 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		B941AE9F1FE28C4600A0B7D5 /* ValidationErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationErrorType.swift; sourceTree = "<group>"; };
 		B96C4EA51FD811CE00649404 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		B96C4EA61FD811CE00649404 /* CreateAccountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountController.xib; sourceTree = "<group>"; };
 		B96C4EA91FD817A400649404 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		B92233DB1FD74070003E04E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B941AE9F1FE28C4600A0B7D5 /* ValidationErrorType.swift */,
 				B92233E91FD74B57003E04E0 /* DatabaseService.swift */,
 				B96C4EA91FD817A400649404 /* User.swift */,
 				B9B791D41FD959B10045A19F /* FacebookRequest.swift */,
@@ -310,6 +313,7 @@
 				B96C4EA71FD811CE00649404 /* CreateAccountController.swift in Sources */,
 				B92233DE1FD74128003E04E0 /* SignUpController.swift in Sources */,
 				B92233E21FD743D4003E04E0 /* ForgotPassword.swift in Sources */,
+				B941AEA01FE28C4600A0B7D5 /* ValidationErrorType.swift in Sources */,
 				B96C4EAD1FD9308700649404 /* ProfileViewController.swift in Sources */,
 				B96C4EAA1FD817A400649404 /* User.swift in Sources */,
 			);

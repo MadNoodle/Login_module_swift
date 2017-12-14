@@ -66,6 +66,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Validator (3.0)
 
 DEPENDENCIES:
   - FacebookCore
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - Validator
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -92,7 +94,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   leveldb-library: 4f9eedf84ab46b4fa3b7893bf30714b2a1a74022
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Validator: 7d9828daffabc757604603052e407f208fa9b6d5
 
-PODFILE CHECKSUM: 97f5b114fb979613bb97c42817cc2af4cf5e9f4f
+PODFILE CHECKSUM: 8abf615382ccc6469be2e0d751ee0f375c5ee18b
 
 COCOAPODS: 1.1.1
